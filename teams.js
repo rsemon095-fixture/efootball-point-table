@@ -4,7 +4,8 @@ import {
   collection,
   onSnapshot
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-
+console.log(teamInput);
+console.log(addTeamBtn);
 const teamList = document.getElementById("teamList");
 
 // Live Team List (Public View)
