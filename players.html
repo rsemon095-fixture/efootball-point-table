@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Players Management</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+background:#0d1117;
+color:#fff;
+font-family:Arial,sans-serif;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+color:#FFD700;
+}
+
+.form{
+background:#161b22;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+}
+
+.form input,
+.form select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#FFD700;
+color:#000;
+font-weight:bold;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+#playerList{
+margin-top:30px;
+}
+
+.player-card{
+background:#161b22;
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+border:1px solid #30363d;
+}
+
+.player-card h3{
+margin:0;
+color:#FFD700;
+}
+
+.player-card p{
+margin:5px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Player Management</h1>
+
+<div class="form">
+
+<input type="text" id="playerName" placeholder="Player Name">
+
+<input type="number" id="jersey" placeholder="Jersey Number">
+
+<select id="position">
+<option value="">Select Position</option>
+<option>GK</option>
+<option>DF</option>
+<option>MF</option>
+<option>FW</option>
+</select>
+
+<select id="team">
+<option value="">Select Team</option>
+</select>
+
+<button id="addPlayerBtn">
+Add Player
+</button>
+
+</div>
+
+<div id="playerList">
+
+</div>
+
+</div>
+
+<script type="module" src="js/players.js"></script>
+
+</body>
+  </html>
