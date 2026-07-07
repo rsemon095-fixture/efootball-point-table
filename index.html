@@ -10,284 +10,145 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-
 <style>
 
 body{
 background:#0d1117;
-color:white;
+color:#fff;
 font-family:Arial,sans-serif;
 margin:0;
 }
 
-
 .header{
-text-align:center;
-padding:30px;
 background:#161b22;
+padding:30px 20px;
+text-align:center;
 }
-
 
 .header h1{
 color:#FFD700;
-font-size:30px;
+font-size:32px;
+margin-bottom:10px;
 }
 
+.header p{
+color:#ccc;
+margin-bottom:20px;
+}
+
+.owner-profile{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+}
+
+.owner-photo{
+width:70px;
+height:70px;
+border-radius:50%;
+border:3px solid #FFD700;
+object-fit:cover;
+}
 
 .owner-name{
-
-margin-top:15px;
-
 font-size:30px;
-
 font-weight:bold;
-
 color:#FFD700;
-
-letter-spacing:3px;
-
-text-shadow:0 0 10px #FFD700;
-
+text-shadow:0 0 10px gold;
 }
-
 
 .menu{
-
 display:flex;
-
 justify-content:center;
-
 gap:15px;
-
 flex-wrap:wrap;
-
-margin:25px;
-
+padding:20px;
 }
-
 
 .menu a{
-
-text-decoration:none;
-
-color:#fff;
-
 background:#222b36;
-
+color:#fff;
 padding:12px 20px;
-
 border-radius:8px;
-
+text-decoration:none;
 }
-
 
 .menu a:hover{
-
 background:#FFD700;
-
-color:black;
-
+color:#000;
 }
-
 
 .container{
-
 width:90%;
-
 max-width:1000px;
-
 margin:auto;
-
 }
-
-
 
 .card{
-
 background:#161b22;
-
 padding:20px;
-
 margin:15px 0;
-
 border-radius:12px;
-
 text-align:center;
-
 }
-
 
 .card h2{
-
 color:#FFD700;
-
 }
-
 
 </style>
 
-
 </head>
-
-
 
 <body>
 
-
-
 <div class="header">
 
+<h1>🏆 Efootball BD Club Tournament 2026</h1>
 
-<h1>
-
-Efootball BD Club Tournament 2026
-
-</h1>
-
-
-<p>
-
-Live Tournament Management System
-
-</p>
-
-
+<p>Live Tournament Management System</p>
 
 <div class="owner-profile">
 
-    <img src="images/rsemon.jpg" alt="RS EMON" class="owner-photo">
+<img src="images/rsemon.jpg" class="owner-photo" alt="RS EMON">
 
-    <div class="owner-profile">
-
-    <img src="আপনার-ছবির-পাথ" class="owner-photo" alt="RS EMON">
-
-    <div class="owner-name">
-        RS EMON
-    </div>
-
+<div class="owner-name">
+RS EMON
 </div>
 
 </div>
 
-
 </div>
-<div class="header">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<h1 class="main-title">
-🏆 EFOOTBALL BD CLUB TOURNAMENT
-</h1>
-
-<p class="subtitle">
-Official Tournament Management System
-</p>
-
-<div class="owner-card">
-
-<img src="images/rsemon.jpg" alt="RS EMON" class="owner-photo">
-
-<div class="owner-info">
-
-<h2>RS EMON</h2>
-
-<p>Tournament Manager</p>
-
-</div>
-
-</div>
-
-<div class="hero-buttons">
-
-<a href="public-points.html" class="btn">
-📊 Point Table
-</a>
-
-<a href="public-fixtures.html" class="btn">
-⚽ Upcoming Match
-</a>
-
-<a href="login.html" class="btn admin-btn">
-🔐 Admin Login
-</a>
-
-</div>
-
-</div>
-
-  </div>
-
-
-
 
 <div class="menu">
 
+<a href="index.html">🏠 Home</a>
 
-<a href="index.html">
+<a href="public-fixtures.html">⚽ Fixtures</a>
 
-🏠 Home
+<a href="public-points.html">📊 Points Table</a>
 
-</a>
+<a href="public-knockout.html">🏆 Knockout</a>
 
-
-<a href="public-fixtures.html">
-
-⚽ Fixtures
-
-</a>
-
-
-<a href="public-points.html">
-
-📊 Points Table
-
-</a>
-
-
-<a href="public-knockout.html">
-
-🏆 Knockout
-
-</a>
-
-
-<a href="login.html">
-
-🔐 Admin Login
-
-</a>
-
-
+<a href="login.html">🔐 Admin Login</a>
 
 </div>
 
-
-
-
-
 <div class="container">
-
-
-
-<div class="card">
-
-
-<h2>
-<!-- Upcoming Match -->
+    <!-- Upcoming Match -->
 
 <div class="card">
 
 <h2>⚽ Upcoming Match</h2>
 
-<div class="match-box">
+<div id="matchCard" class="match-box">
 
 <div class="team">
 
-<img src="team-logo/team1.png" alt="Team 1">
+<img id="team1Logo" src="team-logo/default.png" alt="Team 1">
 
-<h3>Team 1</h3>
+<h3 id="team1Name">Team 1</h3>
 
 </div>
 
@@ -295,64 +156,30 @@ Official Tournament Management System
 
 <h2>VS</h2>
 
-<p>📅 Date : 20 July 2026</p>
+<p>📅 <span id="matchDate">Date</span></p>
 
-<p>⏰ Time : 8:30 PM</p>
+<p>⏰ <span id="matchTime">Time</span></p>
 
-<p>⏳ Deadline : 8:00 PM</p>
+<p>⏳ Deadline : <span id="matchDeadline">Deadline</span></p>
 
-<span class="status upcoming">Upcoming</span>
+<span id="matchStatus" class="status upcoming">Upcoming</span>
 
 </div>
 
 <div class="team">
 
-<img src="team-logo/team2.png" alt="Team 2">
+<img id="team2Logo" src="team-logo/default.png" alt="Team 2">
 
-<h3>Team 2</h3>
+<h3 id="team2Name">Team 2</h3>
+
+</div>
 
 </div>
 
 </div>
-<!-- Upcoming Match -->
 
-<div class="card">
+<!-- Tournament Notice -->
 
-    <h2>⚽ Upcoming Match</h2>
-
-    <div id="matchCard" class="match-box">
-
-        <div class="team">
-            <img id="team1Logo" src="team-logo/default.png" alt="Team 1">
-            <h3 id="team1Name">Team 1</h3>
-        </div>
-
-        <div class="match-info">
-
-            <h2>VS</h2>
-
-            <p>📅 <span id="matchDate">Date</span></p>
-
-            <p>⏰ <span id="matchTime">Time</span></p>
-
-            <p>⏳ Deadline : <span id="matchDeadline">Deadline</span></p>
-
-            <span id="matchStatus" class="status upcoming">Upcoming</span>
-
-        </div>
-
-        <div class="team">
-            <img id="team2Logo" src="team-logo/default.png" alt="Team 2">
-            <h3 id="team2Name">Team 2</h3>
-        </div>
-
-    </div>
-<!-- Upcoming Match Card -->
-<div class="card">
-   ...
-</div>
-
-<!-- Latest Tournament Update -->
 <div class="card">
 
 <h2>📢 Tournament Notice</h2>
@@ -363,88 +190,31 @@ Welcome to Efootball BD Club Tournament 2026.
 
 </div>
 
-
-
-
+<!-- Powered By -->
 
 <div class="card">
 
+<h2>🏆 Powered By</h2>
 
-<h2>
-
-🏆 Powered By
-
-</h2>
-
-
-<p>
-
-RS Emon
-
-</p>
-
+<p>RS EMON</p>
 
 </div>
 
-
-
-
-
+<!-- Statistics -->
 
 <div class="card">
 
+<h2>📈 Tournament Statistics</h2>
 
-<h2>
+<p>Total Teams : <span id="totalTeams">0</span></p>
 
-📈 Tournament Statistics
+<p>Total Groups : <span id="totalGroups">0</span></p>
 
-</h2>
-
-
-<p>
-
-Total Teams : 
-
-<span id="totalTeams">0</span>
-
-</p>
-
-
-
-<p>
-
-Total Groups :
-
-<span id="totalGroups">0</span>
-
-</p>
-
-
-
-
-<p>
-
-Total Matches :
-
-<span id="totalMatches">0</span>
-
-</p>
-
-
-
+<p>Total Matches : <span id="totalMatches">0</span></p>
 </div>
-
-
-
-
-</div>
-
-
-
 
 <script type="module" src="js/index.js"></script>
 
-
 </body>
-
-</html>
+                                               </html>
+                                         </div>
