@@ -57,3 +57,16 @@ matchDeadline.textContent=data.deadline;
 matchStatus.textContent=data.status;
 
 });
+// Live Tournament Notice
+
+const tournamentNotice = document.getElementById("tournamentNotice");
+
+onSnapshot(doc(db, "settings", "notice"), (docSnap) => {
+
+    if (docSnap.exists()) {
+
+        tournamentNotice.textContent = docSnap.data().text;
+
+    }
+
+});
