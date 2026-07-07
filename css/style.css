@@ -131,3 +131,83 @@ font-size:16px;
 }
 
 }
+.header{
+background:linear-gradient(135deg,#001f3f,#0d6efd,#001f3f);
+padding:50px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.main-title{
+font-size:42px;
+font-weight:800;
+color:#FFD700;
+text-shadow:0 0 20px gold;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:18px;
+color:#fff;
+margin-bottom:30px;
+}
+
+.owner-card{
+display:inline-flex;
+align-items:center;
+gap:20px;
+background:rgba(255,255,255,.08);
+padding:18px 25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.2);
+}
+
+.owner-photo{
+width:90px;
+height:90px;
+border-radius:50%;
+border:4px solid gold;
+object-fit:cover;
+box-shadow:0 0 20px gold;
+}
+
+.owner-info h2{
+margin:0;
+font-size:30px;
+color:#FFD700;
+}
+
+.owner-info p{
+margin-top:6px;
+color:#ddd;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+background:#FFD700;
+color:#000;
+padding:12px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+background:#fff;
+}
+
+.admin-btn{
+background:#dc3545;
+color:#fff;
+    }
