@@ -1,79 +1,152 @@
 import { db } from "./firebase.js";
 
 import {
-  collection,
-  getDocs,
-  addDoc,
-  onSnapshot
+collection,
+getDocs,
+addDoc,
+onSnapshot,
+deleteDoc,
+doc,
+query,
+where
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-const teamSelect = document.getElementById("teamSelect");
-const groupSelect = document.getElementById("groupSelect");
-const assignBtn = document.getElementById("assignBtn");
-const assignList = document.getElementById("assignList");
+const teamSelect=document.getElementById("teamSelect");
+const groupSelect=document.getElementById("groupSelect");
+const assignBtn=document.getElementById("assignBtn");
+const assignList=document.getElementById("assignList");
 
-// Load Teams
-async function loadTeams() {
-  const snap = await getDocs(collection(db, "teams"));
+async function loadTeams(){
 
-  snap.forEach(doc => {
-    teamSelect.innerHTML += `
-      <option value="${doc.id}">
-        ${doc.data().name}
-      </option>`;
-  });
+const snap=await getDocs(collection(db,"teams"));
+
+teamSelect.innerHTML='<option value="">Select Team</option>';
+
+snap.forEach(team=>{
+
+teamSelect.innerHTML+=`
+<option value="${team.id}">
+${team.data().name}
+</option>
+`;
+
+});
+
 }
 
-// Load Groups
-async function loadGroups() {
-  const snap = await getDocs(collection(db, "groups"));
+async function loadGroups(){
 
-  snap.forEach(doc => {
-    groupSelect.innerHTML += `
-      <option value="${doc.id}">
-        ${doc.data().name}
-      </option>`;
-  });
+const snap=await getDocs(collection(db,"groups"));
+
+groupSelect.innerHTML='<option value="">Select Group</option>';
+
+snap.forEach(group=>{
+
+groupSelect.innerHTML+=`
+<option value="${group.id}">
+${group.data().name}
+</option>
+`;
+
+});
+
 }
 
 loadTeams();
 loadGroups();
 
-// Assign Team
-assignBtn.addEventListener("click", async () => {
+assignBtn.addEventListener("click",async()=>{
 
-  if (teamSelect.value === "" || groupSelect.value === "") {
-    alert("Select Team and Group");
-    return;
-  }
+if(teamSelect.value==""||groupSelect.value==""){
 
-  await addDoc(collection(db, "assignments"), {
-    teamId: teamSelect.value,
-    teamName: teamSelect.options[teamSelect.selectedIndex].text,
-    groupId: groupSelect.value,
-    groupName: groupSelect.options[groupSelect.selectedIndex].text,
-    createdAt: Date.now()
-  });
+alert("Select Team & Group");
 
-  alert("Team Assigned Successfully");
+return;
+
+}
+
+const check=await getDocs(
+
+query(
+
+collection(db,"assignments"),
+
+where("teamId","==",teamSelect.value)
+
+)
+
+);
+
+if(!check.empty){
+
+alert("This Team Already Assigned");
+
+return;
+
+}
+
+await addDoc(collection(db,"assignments"),{
+
+teamId:teamSelect.value,
+
+teamName:teamSelect.options[teamSelect.selectedIndex].text,
+
+groupId:groupSelect.value,
+
+groupName:groupSelect.options[groupSelect.selectedIndex].text,
+
+createdAt:Date.now()
 
 });
 
-// Live Assignment List
-onSnapshot(collection(db, "assignments"), (snapshot) => {
-
-  assignList.innerHTML = "";
-
-  snapshot.forEach(doc => {
-
-    const data = doc.data();
-
-    assignList.innerHTML += `
-      <tr>
-        <td>${data.teamName}</td>
-        <td>${data.groupName}</td>
-      </tr>`;
-
-  });
+alert("Assigned Successfully");
 
 });
+
+onSnapshot(collection(db,"assignments"),(snap)=>{
+
+assignList.innerHTML="";
+
+snap.forEach(assign=>{
+
+const data=assign.data();
+
+assignList.innerHTML+=`
+
+<tr>
+
+<td>${data.teamName}</td>
+
+<td>${data.groupName}</td>
+
+<td>
+
+<button class="delete-btn"
+
+onclick="deleteAssign('${assign.id}')">
+
+🗑 Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+});
+
+window.deleteAssign=async(id)=>{
+
+if(!confirm("Delete Assignment?")) return;
+
+await deleteDoc(
+
+doc(db,"assignments",id)
+
+);
+
+};
