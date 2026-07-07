@@ -304,3 +304,35 @@ flex-direction:column;
     letter-spacing:3px;
     text-shadow:0 0 10px #FFD700;
 }
+.point-preview{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+.point-preview th,
+.point-preview td{
+border:1px solid #333;
+padding:10px;
+text-align:center;
+}
+
+.point-preview th{
+background:#FFD700;
+color:#000;
+}
+
+.view-btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:#FFD700;
+color:#000;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.view-btn:hover{
+background:#ffc107;
+    }
