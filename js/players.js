@@ -4,9 +4,7 @@ import {
   collection,
   addDoc,
   getDocs,
-  onSnapshot,
-  deleteDoc,
-  doc
+  onSnapshot
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 const playerName = document.getElementById("playerName");
@@ -77,22 +75,9 @@ onSnapshot(collection(db, "players"), (snap) => {
 
             <p>Jersey : ${p.jersey}</p>
 
-            <button onclick="deletePlayer('${playerDoc.id}')">
-                🗑 Delete
-            </button>
-
         </div>
         `;
 
     });
 
 });
-
-// Delete Player
-window.deletePlayer = async (id) => {
-
-    if (!confirm("Delete this player?")) return;
-
-    await deleteDoc(doc(db, "players", id));
-
-};
