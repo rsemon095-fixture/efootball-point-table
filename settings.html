@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings</title>
+
+<style>
+body{
+background:#0d1117;
+font-family:Arial,sans-serif;
+color:#fff;
+margin:0;
+}
+
+.container{
+max-width:900px;
+margin:30px auto;
+padding:20px;
+}
+
+.card{
+background:#161b22;
+padding:20px;
+border-radius:12px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#FFD700;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>⚙ Tournament Settings</h2>
+
+<input
+type="text"
+id="tournamentName"
+placeholder="Tournament Name">
+
+<input
+type="text"
+id="logo"
+placeholder="Logo Image URL">
+
+<input
+type="text"
+id="deadline"
+placeholder="Match Deadline">
+
+<input
+type="text"
+id="footer"
+placeholder="Footer Text">
+
+<button id="saveBtn">
+
+Save Settings
+
+</button>
+
+</div>
+
+</div>
+
+<script type="module" src="js/settings.js"></script>
+
+</body>
+</html>
