@@ -211,3 +211,19 @@ background:#fff;
 background:#dc3545;
 color:#fff;
     }
+.owner-profile{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.owner-photo{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #FFD700;
+    box-shadow:0 0 15px #FFD700;
+    }
