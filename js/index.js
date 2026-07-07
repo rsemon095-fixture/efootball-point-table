@@ -70,3 +70,26 @@ onSnapshot(doc(db, "settings", "notice"), (docSnap) => {
     }
 
 });
+const homePointTable = document.getElementById("homePointTable");
+
+onSnapshot(collection(db, "points"), (snapshot) => {
+
+    homePointTable.innerHTML = "";
+
+    let pos = 1;
+
+    snapshot.forEach((doc) => {
+
+        const data = doc.data();
+
+        homePointTable.innerHTML += `
+            <tr>
+                <td>${pos++}</td>
+                <td>${data.team}</td>
+                <td>${data.points}</td>
+            </tr>
+        `;
+
+    });
+
+});
