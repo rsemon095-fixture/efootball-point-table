@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,46 +10,64 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+
 <style>
 
 body{
 background:#0d1117;
 margin:0;
 font-family:Poppins,sans-serif;
-color:#fff;
+color:white;
 }
 
+
 header{
+
 background:#111827;
 padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 }
+
 
 header h2{
+
 color:#FFD700;
 margin:0;
+
 }
 
+
 .logout{
+
 background:#ff3b30;
 color:white;
 border:none;
 padding:10px 18px;
 border-radius:8px;
 cursor:pointer;
+
 }
+
 
 .container{
+
 width:90%;
 margin:30px auto;
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
 gap:20px;
+
 }
 
+
 .card{
+
 background:#161b22;
 padding:25px;
 border-radius:15px;
@@ -55,77 +75,157 @@ border:1px solid #30363d;
 text-align:center;
 cursor:pointer;
 transition:.3s;
+
 }
+
 
 .card:hover{
+
 border-color:#FFD700;
 transform:translateY(-5px);
+
 }
 
+
 .card h3{
+
 color:#FFD700;
-margin-bottom:10px;
+
 }
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<h2>Efootball BD Club Tournament 2026</h2>
+<h2>
+Efootball BD Club Tournament 2026
+</h2>
+
 
 <button id="logoutBtn" class="logout">
 Logout
 </button>
 
+
 </header>
+
+
 
 <div class="container">
 
+
+
+<div class="card" onclick="location.href='teams.html'">
+
+<h3>Teams</h3>
+
+<p>Manage Teams</p>
+
+</div>
+
+
+
 <div class="card" onclick="location.href='groups.html'">
+
 <h3>Groups</h3>
+
 <p>Manage Groups</p>
+
 </div>
 
-<div class="card">
-<h3>Groups</h3>
-<p>Manage Groups</p>
-</div>
+
+
+
 <div class="card" onclick="location.href='assign-teams.html'">
-    <h3>Assign Teams</h3>
-    <p>Assign Teams To Groups</p>
+
+<h3>Assign Teams</h3>
+
+<p>Team To Group</p>
+
 </div>
-<div class="card">
+
+
+
+
+<div class="card" onclick="location.href='fixtures.html'">
+
 <h3>Fixtures</h3>
-<p>Manage Fixtures</p>
+
+<p>Auto Fixture</p>
+
 </div>
 
-<div class="card">
+
+
+
+<div class="card" onclick="location.href='results.html'">
+
+<h3>Results</h3>
+
+<p>Update Match Result</p>
+
+</div>
+
+
+
+
+<div class="card" onclick="location.href='points.html'">
+
 <h3>Points Table</h3>
+
 <p>Manage Standings</p>
+
 </div>
 
-<div class="card">
+
+
+
+<div class="card" onclick="location.href='knockout.html'">
+
 <h3>Knockout</h3>
+
 <p>Manage Bracket</p>
+
 </div>
 
+
+
+
 <div class="card">
+
 <h3>Players</h3>
+
 <p>Manage Player List</p>
+
 </div>
+
+
+
 
 <div class="card">
+
 <h3>Notice</h3>
+
 <p>Tournament Notice</p>
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <script type="module" src="js/admin.js"></script>
 
+
 </body>
-  </html>
+
+</html>
