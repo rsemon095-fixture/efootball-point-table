@@ -1,5 +1,5 @@
+alert("Admin Players JS Loaded");
 import { db } from "./firebase.js";
-
 import {
   collection,
   addDoc,
