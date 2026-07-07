@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Live Points Table</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.container{
+width:90%;
+max-width:1100px;
+margin:30px auto;
+}
+
+h2{
+color:#FFD700;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid #333;
+text-align:center;
+}
+
+th{
+background:#161b22;
+color:#FFD700;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h2>🏆 Live Points Table</h2>
+
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Rank</th>
+<th>Team</th>
+<th>MP</th>
+<th>W</th>
+<th>D</th>
+<th>L</th>
+<th>GD</th>
+<th>PTS</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="publicPoints">
+
+</tbody>
+
+
+</table>
+
+</div>
+
+
+<script type="module" src="js/public-points.js"></script>
+
+
+</body>
+
+</html>
