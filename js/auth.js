@@ -18,7 +18,7 @@ loginBtn.addEventListener("click", async () => {
             password.value
         );
 
-        window.location.href = "admin.html";
+        window.location.href = "window.location.href = "dashboard.html";";
 
     } catch (err) {
 
