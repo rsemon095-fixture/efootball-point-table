@@ -281,3 +281,26 @@ color:#fff;
 flex-direction:column;
 }
     }
+.owner-profile{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+.owner-photo{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #FFD700;
+}
+
+.owner-name{
+    font-size:30px;
+    font-weight:bold;
+    color:#FFD700;
+    letter-spacing:3px;
+    text-shadow:0 0 10px #FFD700;
+}
