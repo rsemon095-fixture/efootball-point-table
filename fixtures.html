@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixture Generator</title>
 
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.container{
+max-width:1100px;
+margin:30px auto;
+padding:20px;
+}
+
+button{
+padding:12px 20px;
+background:#FFD700;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid #333;
+text-align:center;
+}
+
+th{
+background:#161b22;
+color:#FFD700;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Auto Fixture Generator</h2>
+
+<button id="generateFixture">
+Generate Fixtures
+</button>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Match</th>
+<th>Group</th>
+<th>Home</th>
+<th>Away</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="fixtureList">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script type="module" src="js/fixtures.js"></script>
+
+</body>
+</html>
