@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assign Teams</title>
 
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.container{
+max-width:900px;
+margin:30px auto;
+padding:20px;
+}
+
+h2{
+color:#FFD700;
+margin-bottom:20px;
+}
+
+select,button{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+background:#FFD700;
+font-weight:bold;
+border:none;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+padding:12px;
+border:1px solid #333;
+text-align:center;
+}
+
+th{
+background:#161b22;
+color:#FFD700;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Assign Team To Group</h2>
+
+<select id="teamSelect">
+<option value="">Select Team</option>
+</select>
+
+<select id="groupSelect">
+<option value="">Select Group</option>
+</select>
+
+<button id="assignBtn">
+Assign Team
+</button>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Team</th>
+
+<th>Group</th>
+
+</tr>
+
+</thead>
+
+<tbody id="assignList">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script type="module" src="js/assign.js"></script>
+
+</body>
+</html>
