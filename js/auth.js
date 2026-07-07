@@ -10,17 +10,25 @@ loginBtn.addEventListener("click", async () => {
 
     error.innerText = "";
 
+    if (email.value === "" || password.value === "") {
+        error.innerText = "Please enter Email & Password";
+        return;
+    }
+
     try {
 
         await signInWithEmailAndPassword(
             auth,
-            email.value,
+            email.value.trim(),
             password.value
         );
 
-        window.location.href = "window.location.href = "dashboard.html";";
+        // Login Success
+        window.location.href = "dashboard.html";
 
     } catch (err) {
+
+        console.log(err);
 
         error.innerText = "Invalid Email or Password";
 
