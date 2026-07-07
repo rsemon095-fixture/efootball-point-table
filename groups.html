@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Management</title>
 
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.container{
+width:90%;
+max-width:1000px;
+margin:30px auto;
+}
+
+.form{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+input{
+flex:1;
+padding:12px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:12px 20px;
+background:#FFD700;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#161b22;
+}
+
+th,td{
+padding:14px;
+border:1px solid #30363d;
+text-align:center;
+}
+
+th{
+color:#FFD700;
+}
+
+.delete{
+color:red;
+cursor:pointer;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Group Management</h2>
+
+<div class="form">
+
+<input
+id="groupName"
+placeholder="Example: Group A">
+
+<button id="addGroup">
+
+Add Group
+
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Group Name</th>
+
+<th>Delete</th>
+
+</tr>
+
+</thead>
+
+<tbody id="groupList"></tbody>
+
+</table>
+
+</div>
+
+<script type="module" src="js/groups.js"></script>
+
+</body>
+</html>
