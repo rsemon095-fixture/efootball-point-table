@@ -1,5 +1,5 @@
 import { db } from "./firebase.js";
-
+alert("Teams Page Connected");
 import {
   collection,
   addDoc,
