@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
 
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Efootball BD</h2>
+
+<a href="teams.html">Teams</a>
+<a href="groups.html">Groups</a>
+<a href="assign-teams.html">Assign Teams</a>
+<a href="fixtures.html">Fixtures</a>
+<a href="results.html">Results</a>
+<a href="points.html">Points Table</a>
+<a href="knockout.html">Knockout</a>
+<a href="players.html">Players</a>
+<a href="notice.html">Notice</a>
+<a href="settings.html">Settings</a>
+
+<button id="logoutBtn">Logout</button>
+
+</div>
+
+<div class="content">
+
+<h1>Dashboard</h1>
+
+<div id="stats">
+
+<div class="stat-card">
+<h3>Total Teams</h3>
+<p id="teamCount">0</p>
+</div>
+
+<div class="stat-card">
+<h3>Total Groups</h3>
+<p id="groupCount">0</p>
+</div>
+
+<div class="stat-card">
+<h3>Total Fixtures</h3>
+<p id="fixtureCount">0</p>
+</div>
+
+<div class="stat-card">
+<h3>Total Players</h3>
+<p id="playerCount">0</p>
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>
