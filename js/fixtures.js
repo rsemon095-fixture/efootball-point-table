@@ -35,3 +35,29 @@ async function loadAssignments() {
     return groups;
 
 }
+// Create Round Robin Fixtures
+function createFixtures(teams){
+
+    let matches = [];
+
+    for(let i = 0; i < teams.length; i++){
+
+        for(let j = i + 1; j < teams.length; j++){
+
+            matches.push({
+
+                home: teams[i].teamName,
+
+                away: teams[j].teamName,
+
+                status:"Upcoming"
+
+            });
+
+        }
+
+    }
+
+    return matches;
+
+}
