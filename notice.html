@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice Management</title>
 
+<style>
+body{
+margin:0;
+background:#0d1117;
+font-family:Arial,sans-serif;
+color:white;
+}
+
+.container{
+max-width:900px;
+margin:30px auto;
+padding:20px;
+}
+
+h2{
+color:#FFD700;
+}
+
+textarea{
+width:100%;
+height:120px;
+padding:12px;
+border:none;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#FFD700;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.notice-card{
+background:#161b22;
+padding:15px;
+margin-top:15px;
+border-radius:10px;
+}
+
+.delete{
+background:#ff3b30;
+color:#fff;
+margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📢 Notice Management</h2>
+
+<textarea
+id="noticeText"
+placeholder="Write Notice..."></textarea>
+
+<button id="addNotice">
+Add Notice
+</button>
+
+<div id="noticeList"></div>
+
+</div>
+
+<script type="module" src="js/notice.js"></script>
+
+</body>
+</html>
