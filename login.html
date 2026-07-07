@@ -9,46 +9,41 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-
 body{
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 background:#0d1117;
+margin:0;
+font-family:Arial,sans-serif;
 }
 
 .login-box{
-
 width:380px;
 background:#161b22;
 padding:35px;
 border-radius:15px;
 border:1px solid #30363d;
-
 }
 
 .login-box h2{
-
 text-align:center;
 margin-bottom:25px;
 color:#FFD700;
-
 }
 
 input{
-
 width:100%;
 padding:14px;
 margin-bottom:18px;
 border:none;
 border-radius:8px;
 font-size:16px;
-
+box-sizing:border-box;
 }
 
 button{
-
 width:100%;
 padding:14px;
 background:#FFD700;
@@ -57,17 +52,13 @@ font-weight:bold;
 border:none;
 border-radius:8px;
 cursor:pointer;
-
 }
 
 #error{
-
 margin-top:15px;
 text-align:center;
 color:red;
-
 }
-
 </style>
 
 </head>
@@ -88,10 +79,8 @@ type="password"
 id="password"
 placeholder="Password">
 
-<button id="loginBtn">
-
+<button id="loginBtn" onclick="alert('Button Working')">
 Login
-
 </button>
 
 <p id="error"></p>
