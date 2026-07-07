@@ -56,18 +56,22 @@ matchTime.textContent=data.time;
 matchDeadline.textContent=data.deadline;
 matchStatus.textContent=data.status;
 
-});
+});// =========================
 // Live Tournament Notice
+// =========================
 
 const tournamentNotice = document.getElementById("tournamentNotice");
 
-onSnapshot(doc(db, "settings", "notice"), (docSnap) => {
+onSnapshot(collection(db, "notices"), (snap) => {
 
-    if (docSnap.exists()) {
-
-        tournamentNotice.textContent = docSnap.data().text;
-
+    if (snap.empty) {
+        tournamentNotice.textContent = "No Notice Available";
+        return;
     }
+
+    const latestNotice = snap.docs[snap.docs.length - 1].data();
+
+    tournamentNotice.textContent = latestNotice.text;
 
 });
 const homePointTable = document.getElementById("homePointTable");
