@@ -10,13 +10,16 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+
 <style>
 
 body{
 background:#0d1117;
 color:white;
 font-family:Arial,sans-serif;
+margin:0;
 }
+
 
 .header{
 text-align:center;
@@ -24,148 +27,295 @@ padding:30px;
 background:#161b22;
 }
 
+
 .header h1{
 color:#FFD700;
+font-size:30px;
 }
+
+
+.owner-name{
+
+margin-top:15px;
+
+font-size:30px;
+
+font-weight:bold;
+
+color:#FFD700;
+
+letter-spacing:3px;
+
+text-shadow:0 0 10px #FFD700;
+
+}
+
 
 .menu{
+
 display:flex;
+
 justify-content:center;
+
 gap:15px;
+
 flex-wrap:wrap;
+
 margin:25px;
+
 }
+
 
 .menu a{
+
 text-decoration:none;
+
 color:#fff;
+
 background:#222b36;
+
 padding:12px 20px;
+
 border-radius:8px;
+
 }
+
 
 .menu a:hover{
+
 background:#FFD700;
+
 color:black;
+
 }
+
 
 .container{
+
 width:90%;
+
 max-width:1000px;
+
 margin:auto;
+
 }
+
+
 
 .card{
+
 background:#161b22;
+
 padding:20px;
+
 margin:15px 0;
+
 border-radius:12px;
+
 text-align:center;
+
 }
 
+
 .card h2{
+
 color:#FFD700;
+
 }
+
 
 </style>
 
+
 </head>
+
 
 
 <body>
 
 
+
 <div class="header">
 
+
 <h1>
+
 Efootball BD Club Tournament 2026
+
 </h1>
 
+
 <p>
+
 Live Tournament Management System
+
 </p>
 
+
+
+<div class="owner-name">
+
+RS Emon
+
 </div>
+
+
+</div>
+
+
 
 
 
 <div class="menu">
 
-<a href="index.html">🏠 Home</a>
 
-<a href="public-fixtures.html">⚽ Fixtures</a>
+<a href="index.html">
 
-<a href="public-points.html">📊 Points Table</a>
+🏠 Home
 
-<a href="public-knockout.html">🏆 Knockout</a>
+</a>
 
-<a href="teams.html">👥 Teams</a>
 
-<a href="players.html">👤 Players</a>
+<a href="public-fixtures.html">
 
-<a href="notice.html">📢 Notice</a>
+⚽ Fixtures
 
-<a href="login.html">🔐 Admin Login</a>
+</a>
+
+
+<a href="public-points.html">
+
+📊 Points Table
+
+</a>
+
+
+<a href="public-knockout.html">
+
+🏆 Knockout
+
+</a>
+
+
+<a href="login.html">
+
+🔐 Admin Login
+
+</a>
+
+
 
 </div>
+
+
 
 
 
 <div class="container">
 
 
+
 <div class="card">
 
+
 <h2>
+
 ⚽ Latest Tournament Update
+
 </h2>
 
+
 <p>
+
 All match updates will appear here.
+
 </p>
+
 
 </div>
 
 
 
+
+
 <div class="card">
+
 
 <h2>
-🏆 Powered By Admin
+
+🏆 Powered By
+
 </h2>
 
+
 <p>
-Efootball BD Club Tournament
+
+RS Emon
+
 </p>
 
+
 </div>
+
+
+
+
+
+
 <div class="card">
+
 
 <h2>
-🏆 Powered By Admin
+
+📈 Tournament Statistics
+
 </h2>
 
+
 <p>
-Efootball BD Club Tournament
+
+Total Teams : 
+
+<span id="totalTeams">0</span>
+
 </p>
 
+
+
+<p>
+
+Total Groups :
+
+<span id="totalGroups">0</span>
+
+</p>
+
+
+
+
+<p>
+
+Total Matches :
+
+<span id="totalMatches">0</span>
+
+</p>
+
+
+
 </div>
 
-<div class="card">
 
-<h2>📈 Tournament Statistics</h2>
 
-<p>Total Teams : <span id="totalTeams">0</span></p>
-
-<p>Total Groups : <span id="totalGroups">0</span></p>
-
-<p>Total Matches : <span id="totalMatches">0</span></p>
-
-  </div>
 
 </div>
+
+
+
 
 <script type="module" src="js/index.js"></script>
+
+
 </body>
 
 </html>
