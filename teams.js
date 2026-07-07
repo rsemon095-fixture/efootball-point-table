@@ -14,6 +14,9 @@ const addTeamBtn = document.getElementById("addTeam");
 const teamList = document.getElementById("teamList");
 
 
+// Check JS Load
+console.log("Teams JS Loaded");
+
 
 // Add Team
 
@@ -32,18 +35,16 @@ addTeamBtn.addEventListener("click", async () => {
     }
 
 
-
     try{
 
 
-        const docRef = await addDoc(collection(db,"teams"),{
+        await addDoc(collection(db,"teams"),{
 
             name: team,
 
             createdAt: Date.now()
 
         });
-
 
 
         alert("Team Added Successfully");
@@ -69,14 +70,9 @@ addTeamBtn.addEventListener("click", async () => {
 
 
 
-
-
 // Live Team List
 
-onSnapshot(
-collection(db,"teams"),
-
-(snapshot)=>{
+onSnapshot(collection(db,"teams"),(snapshot)=>{
 
 
     teamList.innerHTML="";
@@ -85,26 +81,20 @@ collection(db,"teams"),
     let i=1;
 
 
-
     snapshot.forEach((team)=>{
 
 
         const data = team.data();
 
 
-
         const tr=document.createElement("tr");
-
 
 
         tr.innerHTML=`
 
-
         <td>${i++}</td>
 
-
         <td>${data.name}</td>
-
 
         <td>
 
@@ -116,12 +106,9 @@ collection(db,"teams"),
 
         </span>
 
-
         </td>
 
-
         `;
-
 
 
         teamList.appendChild(tr);
@@ -131,10 +118,7 @@ collection(db,"teams"),
     });
 
 
-
-},
-
-(error)=>{
+},(error)=>{
 
 
     console.log(error);
@@ -143,26 +127,20 @@ collection(db,"teams"),
     alert("Load Error: " + error.message);
 
 
-}
-
-);
-
-
+});
 
 
 
 
 // Delete Team
 
-
-document.addEventListener("click",async(e)=>{
+document.addEventListener("click", async(e)=>{
 
 
     if(e.target.classList.contains("action")){
 
 
         const id=e.target.dataset.id;
-
 
 
         try{
@@ -173,9 +151,7 @@ document.addEventListener("click",async(e)=>{
             );
 
 
-
             alert("Team Deleted");
-
 
 
         }catch(error){
