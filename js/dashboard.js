@@ -2,9 +2,11 @@ import { db, auth } from "./firebase.js";
 
 import {
   collection,
-  onSnapshot
+  onSnapshot,
+  getDocs,
+  deleteDoc,
+  doc
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-
 import {
   signOut
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
