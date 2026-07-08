@@ -89,3 +89,28 @@ onSnapshot(collection(db,"notices"),(snapshot)=>{
 });
 
 }
+import { rtdb } from "./firebase.js";
+
+const onlineCount = document.getElementById("onlineCount");
+
+const userId = Math.random().toString(36).substring(2);
+
+const userRef = ref(rtdb, "onlineUsers/" + userId);
+
+// User online
+set(userRef, true);
+
+// User বের হলে Remove হবে
+onDisconnect(userRef).remove();
+
+// Live Count
+onValue(ref(rtdb, "onlineUsers"), (snapshot) => {
+
+    if (!snapshot.exists()) {
+        onlineCount.textContent = 0;
+        return;
+    }
+
+    onlineCount.textContent = Object.keys(snapshot.val()).length;
+
+});
