@@ -196,10 +196,7 @@ transition:.35s;
     box-shadow:0 18px 35px rgba(0,0,0,.25);
 }
 
-/* এরপর তোমার পাঠানো পুরো CSS */
-.admin-profile{
-...
-}
+
 .admin-profile{
 display:flex;
 justify-content:center;
@@ -264,7 +261,7 @@ margin-top:10px;
     box-shadow:0 0 30px gold;
     animation:float 3s ease-in-out infinite;
     
-    margin-top:-10px
+    margin-top:-20px
     margin-bottom:15px;
 }
 
