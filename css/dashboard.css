@@ -263,6 +263,8 @@ margin-top:10px;
     border:5px solid gold;
     box-shadow:0 0 30px gold;
     animation:float 3s ease-in-out infinite;
+    
+    margin-top:-10px
     margin-bottom:15px;
 }
 
