@@ -114,3 +114,34 @@ onValue(ref(rtdb, "onlineUsers"), (snapshot) => {
     onlineCount.textContent = Object.keys(snapshot.val()).length;
 
 });
+import { rtdb } from "./firebase.js";
+import {
+  ref,
+  set,
+  onValue,
+  onDisconnect
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+const onlineCount = document.getElementById("onlineCount");
+
+const userId = Date.now() + "-" + Math.random().toString(36).substring(2);
+
+const userRef = ref(rtdb, "onlineUsers/" + userId);
+
+// User Online
+set(userRef, true);
+
+// Browser বন্ধ করলে User Remove হবে
+onDisconnect(userRef).remove();
+
+// Live Online Count
+onValue(ref(rtdb, "onlineUsers"), (snapshot) => {
+
+  if (!snapshot.exists()) {
+    onlineCount.textContent = "0";
+    return;
+  }
+
+  onlineCount.textContent = Object.keys(snapshot.val()).length;
+
+});
