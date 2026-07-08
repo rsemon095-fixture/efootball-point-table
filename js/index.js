@@ -5,7 +5,7 @@ import {
   doc,
   onSnapshot
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-
+import { getDatabase, ref, onValue, set, onDisconnect } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 const totalTeams = document.getElementById("totalTeams");
 const totalGroups = document.getElementById("totalGroups");
 const totalMatches = document.getElementById("totalMatches");
