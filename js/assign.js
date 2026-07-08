@@ -100,7 +100,11 @@ createdAt:Date.now()
 });
 
 alert("Assigned Successfully");
+teamSelect.value = "";
+groupSelect.value = "";
 
+await loadTeams();
+await loadGroups();
 });
 
 onSnapshot(collection(db,"assignments"),(snap)=>{
