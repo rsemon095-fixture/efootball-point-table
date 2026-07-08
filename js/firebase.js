@@ -12,6 +12,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
+export const rtdb = getDatabase(app);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
