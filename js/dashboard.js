@@ -39,6 +39,42 @@ onSnapshot(collection(db, "players"), (snap) => {
 });
 
 // Logout
+// =======================
+// Reset Tournament
+// =======================
+
+const resetTournament = document.getElementById("resetTournament");
+
+resetTournament.addEventListener("click", async () => {
+
+    const ok = confirm(
+        "⚠️ সব Tournament Data Delete হবে!\n\nআপনি কি নিশ্চিত?"
+    );
+
+    if (!ok) return;
+
+    const collections = [
+        "teams",
+        "players",
+        "groups",
+        "assignments",
+        "fixtures",
+        "points",
+        "knockout",
+        "notices"
+    ];
+
+    for (const name of collections) {
+
+        const snapshot = await getDocs(collection(db, name));
+
+        for (const d of snapshot.docs) {
+            await deleteDoc(doc(db, name, d.id));
+        }
+    }
+
+    alert("✅ Tournament Reset Successfully!");
+});
 logoutBtn.addEventListener("click", async () => {
     await signOut(auth);
     window.location.href = "login.html";
