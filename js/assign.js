@@ -55,102 +55,39 @@ ${group.data().name}
 loadTeams();
 loadGroups();
 
-assignBtn.addEventListener("click",async()=>{
+assignBtn.addEventListener("click", async () => {
+  try {
+    if (!teamSelect.value || !groupSelect.value) {
+      alert("Select Team & Group");
+      return;
+    }
 
-if(teamSelect.value==""||groupSelect.value==""){
+    const check = await getDocs(
+      query(
+        collection(db, "assignments"),
+        where("teamId", "==", teamSelect.value)
+      )
+    );
 
-alert("Select Team & Group");
+    if (!check.empty) {
+      alert("This Team Already Assigned");
+      return;
+    }
 
-return;
+    await addDoc(collection(db, "assignments"), {
+      teamId: teamSelect.value,
+      teamName: teamSelect.options[teamSelect.selectedIndex].text,
+      groupId: groupSelect.value,
+      groupName: groupSelect.options[groupSelect.selectedIndex].text,
+      createdAt: Date.now()
+    });
 
-}
+    teamSelect.value = "";
+    groupSelect.value = "";
 
-const check=await getDocs(
-
-query(
-
-collection(db,"assignments"),
-
-where("teamId","==",teamSelect.value)
-
-)
-
-);
-
-if(!check.empty){
-
-alert("This Team Already Assigned");
-
-return;
-
-}
-
-await addDoc(collection(db,"assignments"),{
-
-teamId:teamSelect.value,
-
-teamName:teamSelect.options[teamSelect.selectedIndex].text,
-
-groupId:groupSelect.value,
-
-groupName:groupSelect.options[groupSelect.selectedIndex].text,
-
-createdAt:Date.now()
-
+    alert("Assigned Successfully");
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
 });
-
-alert("Assigned Successfully");
-teamSelect.value = "";
-groupSelect.value = "";
-
-await loadTeams();
-await loadGroups();
-});
-
-onSnapshot(collection(db,"assignments"),(snap)=>{
-
-assignList.innerHTML="";
-
-snap.forEach(assign=>{
-
-const data=assign.data();
-
-assignList.innerHTML+=`
-
-<tr>
-
-<td>${data.teamName}</td>
-
-<td>${data.groupName}</td>
-
-<td>
-
-<button class="delete-btn"
-
-onclick="deleteAssign('${assign.id}')">
-
-🗑 Delete
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-});
-
-});
-
-window.deleteAssign=async(id)=>{
-
-if(!confirm("Delete Assignment?")) return;
-
-await deleteDoc(
-
-doc(db,"assignments",id)
-
-);
-
-};
