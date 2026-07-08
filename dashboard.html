@@ -1,48 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Premium Admin Dashboard</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
 <body>
 
-<div class="content">
+<div class="dashboard-container">
 
-<div class="header-admin">
+    <!-- Hero Section -->
 
-<img src="FB_IMG_1732024524069~2_1783460770713.png"
-class="admin-photo">
+    <section class="hero">
 
-<h1 class="owner">RS EMON</h1>
+        <img src="FB_IMG_1732024524069~2_1783460770713.png" class="hero-photo" alt="RS EMON">
 
-<p class="admin-title">
-Tournament Manager
-</p>
+        <h1 class="hero-name">RS EMON</h1>
 
-<h2 class="dashboard-title">
-🏆 Efootball BD Club Tournament 2026
-</h2>
+        <p class="hero-role">Tournament Manager</p>
 
-<p class="dashboard-subtitle">
-Premium Admin Dashboard
-</p>
+        <h2 class="hero-title">
+            🏆 Efootball BD Club Tournament 2026
+        </h2>
 
-</div>
-<div class="menu">
+        <p class="hero-subtitle">
+            Premium Admin Dashboard
+        </p>
 
-<a href="admin-teams.html">⚽ Teams</a>
+    </section>
 
-<a href="admin-players.html">👤 Players</a>
+    <!-- Menu Cards -->
 
-<a href="groups.html">🏆 Groups</a>
+    <section class="menu-grid">
+      <a href="admin-teams.html" class="menu-card">
+    <span>⚽</span>
+    <h3>Teams</h3>
+</a>
 
-<a href="assign-teams.html">🔄 Assign Teams</a>
+<a href="admin-players.html" class="menu-card">
+    <span>👤</span>
+    <h3>Players</h3>
+</a>
 
-<a href="fixtures.html">📅 Fixtures</a>
+<a href="groups.html" class="menu-card">
+    <span>🏆</span>
+    <h3>Groups</h3>
+</a>
 
-<a href="results.html">📝 Results</a>
+<a href="assign-teams.html" class="menu-card">
+    <span>🔄</span>
+    <h3>Assign Teams</h3>
+</a>
 
-<a href="points.html">📊 Points Table</a>
+<a href="fixtures.html" class="menu-card">
+    <span>📅</span>
+    <h3>Fixtures</h3>
+</a>
 
-<a href="knockout.html">🥇 Knockout</a>
+<a href="results.html" class="menu-card">
+    <span>📝</span>
+    <h3>Results</h3>
+</a>
 
-<a href="notice.html">📢 Notice</a>
+<a href="points.html" class="menu-card">
+    <span>📊</span>
+    <h3>Points Table</h3>
+</a>
 
-<a href="settings.html">⚙ Settings</a>
+<a href="knockout.html" class="menu-card">
+    <span>🥇</span>
+    <h3>Knockout</h3>
+</a>
+
+<a href="notice.html" class="menu-card">
+    <span>📢</span>
+    <h3>Notice</h3>
+</a>
+
+<a href="settings.html" class="menu-card">
+    <span>⚙️</span>
+    <h3>Settings</h3>
+</a>
+
+</section>
+
+<div class="action-buttons">
 
 <button id="logoutBtn">
 🚪 Logout
@@ -53,37 +102,41 @@ Premium Admin Dashboard
 </button>
 
 </div>
-<h1 style="margin-top:30px;">
+
+<section class="dashboard-section">
+
+<h2 class="section-title">
 📊 Dashboard Overview
-</h1>
+</h2>
 
 <div id="stats">
-
-<div class="stat-card">
-<h3>⚽ Total Teams</h3>
-<p id="teamCount">0</p>
+  <div class="stat-card">
+    <h3>⚽ Total Teams</h3>
+    <p id="teamCount">0</p>
 </div>
 
 <div class="stat-card">
-<h3>🏆 Total Groups</h3>
-<p id="groupCount">0</p>
+    <h3>🏆 Total Groups</h3>
+    <p id="groupCount">0</p>
 </div>
 
 <div class="stat-card">
-<h3>📅 Total Fixtures</h3>
-<p id="fixtureCount">0</p>
+    <h3>📅 Total Fixtures</h3>
+    <p id="fixtureCount">0</p>
 </div>
 
 <div class="stat-card">
-<h3>👤 Total Players</h3>
-<p id="playerCount">0</p>
+    <h3>👤 Total Players</h3>
+    <p id="playerCount">0</p>
 </div>
 
 </div>
+
+</section>
 
 </div>
 
 <script type="module" src="js/dashboard.js"></script>
 
 </body>
-</html>
+  </html>
