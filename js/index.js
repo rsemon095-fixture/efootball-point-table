@@ -56,44 +56,22 @@ matchTime.textContent=data.time;
 matchDeadline.textContent=data.deadline;
 matchStatus.textContent=data.status;
 
-});// =========================
+// =========================
 // Live Tournament Notice
 // =========================
 
 const tournamentNotice = document.getElementById("tournamentNotice");
 
-onSnapshot(collection(db, "notices"), (snap) => {
+onSnapshot(collection(db, "notices"), (snapshot) => {
 
-    if (snap.empty) {
+    if (snapshot.empty) {
         tournamentNotice.textContent = "No Notice Available";
         return;
     }
 
-    const latestNotice = snap.docs[snap.docs.length - 1].data();
-
-    tournamentNotice.textContent = latestNotice.text;
-
-});
-const homePointTable = document.getElementById("homePointTable");
-
-onSnapshot(collection(db, "points"), (snapshot) => {
-
-    homePointTable.innerHTML = "";
-
-    let pos = 1;
-
     snapshot.forEach((doc) => {
-
         const data = doc.data();
-
-        homePointTable.innerHTML += `
-            <tr>
-                <td>${pos++}</td>
-                <td>${data.team}</td>
-                <td>${data.points}</td>
-            </tr>
-        `;
-
+        tournamentNotice.textContent = data.text;
     });
 
 });
