@@ -590,3 +590,104 @@ backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,.4);
 box-shadow:0 10px 25px rgba(0,0,0,.2);
     }
+/* ========================= */
+/* PREMIUM HERO */
+/* ========================= */
+
+body{
+background:linear-gradient(135deg,#eef5ff,#dbe9ff,#ffffff);
+}
+
+.hero-header{
+position:relative;
+padding:60px 20px;
+text-align:center;
+overflow:hidden;
+background:linear-gradient(135deg,#0066ff,#7b2ff7,#00c6ff);
+border-radius:0 0 35px 35px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.hero-bg{
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,255,255,.15);
+border-radius:50%;
+top:-220px;
+left:-120px;
+filter:blur(30px);
+}
+
+.owner-profile{
+display:inline-flex;
+align-items:center;
+gap:20px;
+padding:20px 30px;
+border-radius:25px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.owner-photo{
+width:120px;
+height:120px;
+border-radius:50%;
+border:5px solid gold;
+box-shadow:0 0 30px gold;
+object-fit:cover;
+}
+
+.owner-name{
+
+font-size:42px;
+font-weight:900;
+
+background:linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+lime,
+cyan,
+blue,
+violet,
+red
+);
+
+background-size:500%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:rgb 5s linear infinite;
+
+}
+
+@keyframes rgb{
+
+100%{
+background-position:500%;
+}
+
+}
+
+.owner-title{
+color:#fff;
+font-size:20px;
+margin-top:8px;
+}
+
+.main-title{
+margin-top:40px;
+font-size:38px;
+color:white;
+font-weight:900;
+text-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.sub-title{
+margin-top:10px;
+color:#f1f1f1;
+font-size:18px;
+    }
