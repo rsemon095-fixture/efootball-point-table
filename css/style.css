@@ -385,3 +385,107 @@ color:#fff;
 border-radius:20px;
 font-weight:bold;
     }
+/* ========================= */
+/* RS EMON RGB Animation */
+/* ========================= */
+
+.owner-name{
+
+font-size:30px;
+font-weight:bold;
+letter-spacing:3px;
+
+background:linear-gradient(
+90deg,
+#ff0000,
+#ff8800,
+#ffff00,
+#00ff00,
+#00ffff,
+#0066ff,
+#8a2be2,
+#ff1493,
+#ff0000
+);
+
+background-size:500%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:rgbColor 6s linear infinite,
+moveName 4s ease-in-out infinite;
+
+}
+
+@keyframes rgbColor{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:500%;
+}
+
+}
+
+@keyframes moveName{
+
+0%{
+transform:translateX(-25px);
+}
+
+50%{
+transform:translateX(25px);
+}
+
+100%{
+transform:translateX(-25px);
+}
+
+}
+
+/* ========================= */
+/* Online View Button */
+/* ========================= */
+
+.online-view{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:12px 22px;
+
+border-radius:30px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#fff;
+
+background:linear-gradient(90deg,#00c853,#00e676,#00c853);
+
+box-shadow:0 0 15px #00ff88;
+
+animation:viewGlow 2s infinite;
+
+}
+
+@keyframes viewGlow{
+
+0%{
+box-shadow:0 0 10px #00ff88;
+}
+
+50%{
+box-shadow:0 0 30px #00ff88;
+}
+
+100%{
+box-shadow:0 0 10px #00ff88;
+}
+
+    }
