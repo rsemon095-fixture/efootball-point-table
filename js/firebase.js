@@ -6,6 +6,7 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/11.10.0/firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBc4A_OwclBuYzs4L4-2btw8clIlEXuLCo",
   authDomain: "efootball-bd-club-2026-26e69.firebaseapp.com",
+  databaseURL: "https://efootball-bd-club-2026-26e69-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "efootball-bd-club-2026-26e69",
   storageBucket: "efootball-bd-club-2026-26e69.firebasestorage.app",
   messagingSenderId: "585390477677",
