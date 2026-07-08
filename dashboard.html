@@ -14,79 +14,105 @@
 
 <body>
 
-<div class="dashboard-container">
+<div class="dashboard">
 
-    <!-- Hero Section -->
+<!-- ======================
+HEADER
+====================== -->
 
-    <section class="hero">
+<header class="hero">
 
-        <img src="FB_IMG_1732024524069~2_1783460770713.png" class="hero-photo" alt="RS EMON">
+<div class="hero-overlay"></div>
 
-        <h1 class="hero-name">RS EMON</h1>
+<div class="hero-content">
 
-        <p class="hero-role">Tournament Manager</p>
+<img src="FB_IMG_1732024524069~2_1783460770713.png"
+class="hero-photo"
+alt="RS EMON">
 
-        <h2 class="hero-title">
-            🏆 Efootball BD Club Tournament 2026
-        </h2>
+<h1 class="hero-name">
+RS EMON
+</h1>
 
-        <p class="hero-subtitle">
-            Premium Admin Dashboard
-        </p>
+<p class="hero-role">
+Tournament Manager
+</p>
 
-    </section>
+<h2 class="hero-title">
+🏆 Efootball BD Club Tournament 2026
+</h2>
 
-    <!-- Menu Cards -->
+<p class="hero-subtitle">
+Premium Admin Dashboard
+</p>
 
-    <section class="menu-grid">
-      <a href="admin-teams.html" class="menu-card">
-    <span>⚽</span>
-    <h3>Teams</h3>
+</div>
+
+</header>
+
+<!-- ======================
+MENU
+====================== -->
+
+<section class="menu-grid">
+    <a href="admin-teams.html" class="menu-card">
+<div class="menu-icon">⚽</div>
+<h3>Teams</h3>
+<p>Manage Tournament Teams</p>
 </a>
 
 <a href="admin-players.html" class="menu-card">
-    <span>👤</span>
-    <h3>Players</h3>
+<div class="menu-icon">👤</div>
+<h3>Players</h3>
+<p>Manage Players</p>
 </a>
 
 <a href="groups.html" class="menu-card">
-    <span>🏆</span>
-    <h3>Groups</h3>
+<div class="menu-icon">🏆</div>
+<h3>Groups</h3>
+<p>Create Groups</p>
 </a>
 
 <a href="assign-teams.html" class="menu-card">
-    <span>🔄</span>
-    <h3>Assign Teams</h3>
+<div class="menu-icon">🔄</div>
+<h3>Assign Teams</h3>
+<p>Assign Teams To Groups</p>
 </a>
 
 <a href="fixtures.html" class="menu-card">
-    <span>📅</span>
-    <h3>Fixtures</h3>
+<div class="menu-icon">📅</div>
+<h3>Fixtures</h3>
+<p>Match Schedule</p>
 </a>
 
 <a href="results.html" class="menu-card">
-    <span>📝</span>
-    <h3>Results</h3>
+<div class="menu-icon">📝</div>
+<h3>Results</h3>
+<p>Update Match Results</p>
 </a>
 
 <a href="points.html" class="menu-card">
-    <span>📊</span>
-    <h3>Points Table</h3>
+<div class="menu-icon">📊</div>
+<h3>Points Table</h3>
+<p>View Standings</p>
 </a>
 
 <a href="knockout.html" class="menu-card">
-    <span>🥇</span>
-    <h3>Knockout</h3>
+<div class="menu-icon">🥇</div>
+<h3>Knockout</h3>
+<p>Knockout Stage</p>
 </a>
 
 <a href="notice.html" class="menu-card">
-    <span>📢</span>
-    <h3>Notice</h3>
+<div class="menu-icon">📢</div>
+<h3>Notice</h3>
+<p>Tournament Notice</p>
 </a>
 
 <a href="settings.html" class="menu-card">
-    <span>⚙️</span>
-    <h3>Settings</h3>
+<div class="menu-icon">⚙️</div>
+<h3>Settings</h3>
+<p>Dashboard Settings</p>
 </a>
 
 </section>
@@ -103,40 +129,56 @@
 
 </div>
 
-<section class="dashboard-section">
+<section class="stats-section">
 
 <h2 class="section-title">
 📊 Dashboard Overview
 </h2>
 
 <div id="stats">
-  <div class="stat-card">
-    <h3>⚽ Total Teams</h3>
-    <p id="teamCount">0</p>
+    <div class="stat-card">
+    <div class="stat-icon">⚽</div>
+    <h3>Total Teams</h3>
+    <h1 id="teamCount">0</h1>
 </div>
 
 <div class="stat-card">
-    <h3>🏆 Total Groups</h3>
-    <p id="groupCount">0</p>
+    <div class="stat-icon">🏆</div>
+    <h3>Total Groups</h3>
+    <h1 id="groupCount">0</h1>
 </div>
 
 <div class="stat-card">
-    <h3>📅 Total Fixtures</h3>
-    <p id="fixtureCount">0</p>
+    <div class="stat-icon">📅</div>
+    <h3>Total Fixtures</h3>
+    <h1 id="fixtureCount">0</h1>
 </div>
 
 <div class="stat-card">
-    <h3>👤 Total Players</h3>
-    <p id="playerCount">0</p>
+    <div class="stat-icon">👤</div>
+    <h3>Total Players</h3>
+    <h1 id="playerCount">0</h1>
 </div>
 
 </div>
 
 </section>
 
+<footer class="dashboard-footer">
+
+<p>
+© 2026 Efootball BD Club Tournament
+</p>
+
+<p>
+Developed By <strong>RS EMON</strong>
+</p>
+
+</footer>
+
 </div>
 
 <script type="module" src="js/dashboard.js"></script>
 
 </body>
-  </html>
+    </html>
