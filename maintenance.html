@@ -56,44 +56,27 @@ color:#fff;
 margin-top:20px;
 font-size:20px;
 font-weight:bold;
-color:#00ff99;
 }
 </style>
-
 </head>
-<h1 style="color:red;text-align:center;">TEST PAGE</h1>
+
 <body>
 
 <div class="box">
 
 <h1>🛠 Maintenance Mode</h1>
 
-<button id="onBtn">
-Turn ON
-</button>
+<button id="onBtn">Turn ON</button>
 
-<button id="offBtn">
-Turn OFF
-</button>
+<button id="offBtn">Turn OFF</button>
 
-<body>
+<div id="status">
+Current Status : OFF
+</div>
 
-
-
-<script>
-window.onload = function () {
-
-  document.getElementById("onBtn").onclick = function () {
-    alert("ON Button Works");
-  };
-
-  document.getElementById("offBtn").onclick = function () {
-    alert("OFF Button Works");
-  };
-
-};
-</script>
+</div>
 
 <script type="module" src="js/maintenance.js"></script>
 
 </body>
+</html>
