@@ -73,11 +73,48 @@ async function checkMaintenance() {
 
 }
 
-const maintenanceEnabled = await checkMaintenance();
+const maintenanceRef = ref(rtdb, "system/maintenance");
 
-if (maintenanceEnabled) {
-  // Maintenance চালু থাকলে নিচের কোড আর চলবে না।
-} else {
+onValue(maintenanceRef, (snapshot) => {
+
+  if (snapshot.exists() && snapshot.val() === true) {
+
+    document.body.innerHTML = `
+    <div style="
+      position:fixed;
+      inset:0;
+      background:#0f172a;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      font-family:Arial,sans-serif;
+      z-index:999999;
+    ">
+      <div>
+        <h1 style="font-size:42px;color:#00e5ff;">
+          🛠️ Maintained Update
+        </h1>
+
+        <h2 style="margin-top:20px;">
+          Waiting For You.
+        </h2>
+
+        <p style="margin-top:35px;font-size:20px;color:#FFD700;">
+          Powered By <b>RS Emon</b>
+        </p>
+      </div>
+    </div>
+    `;
+
+    return;
+  }
+
+  // এখান থেকে তোমার Tournament Statistics,
+  // Upcoming Match, Notice, Online Users-এর সব কোড থাকবে।
+
+});
   // =========================
 // Tournament Statistics
 // =========================
