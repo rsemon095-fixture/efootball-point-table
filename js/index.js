@@ -12,7 +12,53 @@ import {
   onValue,
   onDisconnect
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+import { get } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
+// =========================
+// Maintenance Mode
+// =========================
+
+const maintenanceRef = ref(rtdb, "system/maintenance");
+
+get(maintenanceRef).then((snapshot) => {
+
+  if (snapshot.exists() && snapshot.val() === true) {
+
+    document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#0f172a;
+      color:#fff;
+      text-align:center;
+      font-family:Arial,sans-serif;
+      padding:20px;
+    ">
+      <div>
+        <h1 style="font-size:38px;">🛠️ Maintained Update</h1>
+
+        <h2 style="margin-top:20px;">
+          Waiting For You.
+        </h2>
+
+        <p style="
+          margin-top:35px;
+          font-size:18px;
+          color:#00e5ff;
+        ">
+          Powered By <b>RS Emon</b>
+        </p>
+      </div>
+    </div>
+    `;
+
+    throw new Error("Maintenance Enabled");
+
+  }
+
+});
 // =========================
 // Tournament Statistics
 // =========================
