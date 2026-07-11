@@ -1,4 +1,5 @@
 import { rtdb } from "./firebase.js";
+alert("maintenance.js Loaded");
 import { ref, set, get } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 const onBtn = document.getElementById("onBtn");
