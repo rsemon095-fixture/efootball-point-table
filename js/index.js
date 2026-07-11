@@ -9,61 +9,76 @@ import {
 import {
   ref,
   set,
+  get,
   onValue,
   onDisconnect
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
-import { get } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 // =========================
 // Maintenance Mode
 // =========================
-const maintenanceRef = ref(rtdb, "system/maintenance");
 
 async function checkMaintenance() {
 
-    const snapshot = await get(maintenanceRef);
+  const maintenanceRef = ref(rtdb, "system/maintenance");
+  const snapshot = await get(maintenanceRef);
 
-    if (snapshot.exists() && snapshot.val() === true) {
-
-        document.body.innerHTML = `
-        <div style="
-        position:fixed;
-        inset:0;
-        background:#0f172a;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-        color:#fff;
-        font-family:Arial,sans-serif;
-        z-index:999999;
-        ">
-            <div>
-
-                <h1 style="font-size:42px;">
-                🛠️ Maintained Update
-                </h1>
-
-                <h2 style="margin-top:20px;">
-                Waiting For You.
-                </h2>
-
-                <p style="margin-top:35px;color:#00e5ff;font-size:20px;">
-                Powered By <b>RS Emon</b>
-                </p>
-
-            </div>
-        </div>
-        `;
-
-        return true;
-
-    }
-
+  if (!snapshot.exists() || snapshot.val() !== true) {
     return false;
+  }
+
+  document.body.innerHTML = `
+  <div style="
+      position:fixed;
+      inset:0;
+      background:#0f172a;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      font-family:Arial,sans-serif;
+      z-index:999999;
+  ">
+
+      <div>
+
+          <h1 style="
+          font-size:42px;
+          color:#00e5ff;
+          ">
+          🛠️ Maintained Update
+          </h1>
+
+          <h2 style="
+          margin-top:20px;
+          ">
+          Waiting For You.
+          </h2>
+
+          <p style="
+          margin-top:35px;
+          font-size:20px;
+          color:#FFD700;
+          ">
+          Powered By <b>RS Emon</b>
+          </p>
+
+      </div>
+
+  </div>
+  `;
+
+  return true;
 
 }
-// =========================
+
+const maintenanceEnabled = await checkMaintenance();
+
+if (maintenanceEnabled) {
+  // Maintenance চালু থাকলে নিচের কোড আর চলবে না।
+} else {
+  // =========================
 // Tournament Statistics
 // =========================
 
@@ -72,19 +87,19 @@ const totalGroups = document.getElementById("totalGroups");
 const totalMatches = document.getElementById("totalMatches");
 
 if (totalTeams) {
-  onSnapshot(collection(db, "teams"), snap => {
+  onSnapshot(collection(db, "teams"), (snap) => {
     totalTeams.textContent = snap.size;
   });
 }
 
 if (totalGroups) {
-  onSnapshot(collection(db, "groups"), snap => {
+  onSnapshot(collection(db, "groups"), (snap) => {
     totalGroups.textContent = snap.size;
   });
 }
 
 if (totalMatches) {
-  onSnapshot(collection(db, "fixtures"), snap => {
+  onSnapshot(collection(db, "fixtures"), (snap) => {
     totalMatches.textContent = snap.size;
   });
 }
@@ -123,9 +138,8 @@ if (team1Name) {
 
   });
 
-}
-
-// =========================
+    }
+  // =========================
 // Tournament Notice
 // =========================
 
@@ -155,7 +169,8 @@ const onlineCount = document.getElementById("onlineCount");
 
 if (onlineCount) {
 
-  const userId = Date.now() + "-" + Math.random().toString(36).substring(2);
+  const userId =
+    Date.now() + "-" + Math.random().toString(36).substring(2);
 
   const userRef = ref(rtdb, "onlineUsers/" + userId);
 
@@ -168,9 +183,16 @@ if (onlineCount) {
     if (!snapshot.exists()) {
       onlineCount.textContent = "0";
     } else {
-      onlineCount.textContent = Object.keys(snapshot.val()).length;
+      onlineCount.textContent =
+        Object.keys(snapshot.val()).length;
     }
 
   });
+
+}
+
+// =========================
+// End Maintenance Block
+// =========================
 
 }
