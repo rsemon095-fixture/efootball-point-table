@@ -28,88 +28,85 @@ async function checkMaintenance() {
   }
 
   document.body.innerHTML = `
-  <div style="
-      position:fixed;
-      inset:0;
-      background:#0f172a;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:#fff;
-      font-family:Arial,sans-serif;
-      z-index:999999;
-  ">
+<div style="
+position:fixed;
+inset:0;
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+color:#fff;
+z-index:999999;
+">
 
-      <div>
+<div style="
+text-align:center;
+padding:30px;
+">
 
-          <h1 style="
-          font-size:42px;
-          color:#00e5ff;
-          ">
-          🛠️ Maintained Update
-          </h1>
+<div style="
+width:90px;
+height:90px;
+margin:auto;
+border:8px solid rgba(255,255,255,.15);
+border-top:8px solid #00e5ff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+"></div>
 
-          <h2 style="
-          margin-top:20px;
-          ">
-          Waiting For You.
-          </h2>
+<h1 style="
+margin-top:30px;
+font-size:42px;
+color:#00e5ff;
+text-shadow:0 0 15px #00e5ff;
+">
+🛠️ Maintained Update
+</h1>
 
-          <p style="
-          margin-top:35px;
-          font-size:20px;
-          color:#FFD700;
-          ">
-          Powered By <b>RS Emon</b>
-          </p>
+<p style="
+font-size:22px;
+margin-top:15px;
+color:#ffffff;
+">
+Waiting For You...
+</p>
 
-      </div>
+<p style="
+margin-top:20px;
+font-size:17px;
+color:#b0bec5;
+">
+We are improving your experience.<br>
+Please come back shortly.
+</p>
 
-  </div>
-  `;
+<div style="
+margin-top:35px;
+padding:15px;
+border:1px solid rgba(255,255,255,.15);
+border-radius:15px;
+background:rgba(255,255,255,.05);
+">
 
-  return true;
+<h2 style="
+margin:0;
+color:#FFD700;
+">
+Powered By RS Emon
+</h2>
 
+</div>
+
+</div>
+
+<style>
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
-
-const maintenanceRef = ref(rtdb, "system/maintenance");
-
-onValue(maintenanceRef, (snapshot) => {
-
-  if (snapshot.exists() && snapshot.val() === true) {
-
-    document.body.innerHTML = `
-    <div style="
-      position:fixed;
-      inset:0;
-      background:#0f172a;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:#fff;
-      font-family:Arial,sans-serif;
-      z-index:999999;
-    ">
-      <div>
-        <h1 style="font-size:42px;color:#00e5ff;">
-          🛠️ Maintained Update
-        </h1>
-
-        <h2 style="margin-top:20px;">
-          Waiting For You.
-        </h2>
-
-        <p style="margin-top:35px;font-size:20px;color:#FFD700;">
-          Powered By <b>RS Emon</b>
-        </p>
-      </div>
-    </div>
-    `;
-
-    return;
-  }
+</style>
+`;
 
   // এখান থেকে তোমার Tournament Statistics,
   // Upcoming Match, Notice, Online Users-এর সব কোড থাকবে।
