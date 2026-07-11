@@ -17,48 +17,52 @@ import { get } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-databas
 // =========================
 // Maintenance Mode
 // =========================
-
 const maintenanceRef = ref(rtdb, "system/maintenance");
 
-get(maintenanceRef).then((snapshot) => {
+async function checkMaintenance() {
 
-  if (snapshot.exists() && snapshot.val() === true) {
+    const snapshot = await get(maintenanceRef);
 
-    document.body.innerHTML = `
-    <div style="
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#0f172a;
-      color:#fff;
-      text-align:center;
-      font-family:Arial,sans-serif;
-      padding:20px;
-    ">
-      <div>
-        <h1 style="font-size:38px;">🛠️ Maintained Update</h1>
+    if (snapshot.exists() && snapshot.val() === true) {
 
-        <h2 style="margin-top:20px;">
-          Waiting For You.
-        </h2>
-
-        <p style="
-          margin-top:35px;
-          font-size:18px;
-          color:#00e5ff;
+        document.body.innerHTML = `
+        <div style="
+        position:fixed;
+        inset:0;
+        background:#0f172a;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        color:#fff;
+        font-family:Arial,sans-serif;
+        z-index:999999;
         ">
-          Powered By <b>RS Emon</b>
-        </p>
-      </div>
-    </div>
-    `;
+            <div>
 
-    throw new Error("Maintenance Enabled");
+                <h1 style="font-size:42px;">
+                🛠️ Maintained Update
+                </h1>
 
-  }
+                <h2 style="margin-top:20px;">
+                Waiting For You.
+                </h2>
 
-});
+                <p style="margin-top:35px;color:#00e5ff;font-size:20px;">
+                Powered By <b>RS Emon</b>
+                </p>
+
+            </div>
+        </div>
+        `;
+
+        return true;
+
+    }
+
+    return false;
+
+}
 // =========================
 // Tournament Statistics
 // =========================
