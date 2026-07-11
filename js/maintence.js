@@ -1,5 +1,5 @@
 import { rtdb } from "./firebase.js";
-
+alert("JS Started");
 import {
   ref,
   get,
