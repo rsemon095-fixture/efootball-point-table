@@ -76,21 +76,38 @@ Turn ON
 Turn OFF
 </button>
 
+<body>
+
+<h1 style="color:red;text-align:center;">TEST PAGE</h1>
+
+<div class="box">
+
+<h1>🛠 Maintenance Mode</h1>
+
+<button id="onBtn">Turn ON</button>
+
+<button id="offBtn">Turn OFF</button>
+
 <div id="status">
 Current Status : OFF
 </div>
 
 </div>
 
-<script type="module" src="js/maintenance.js"></script>
 <script>
-document.getElementById("onBtn").onclick = () => {
-    alert("ON Button Works");
-};
+window.onload = function () {
 
-document.getElementById("offBtn").onclick = () => {
+  document.getElementById("onBtn").onclick = function () {
+    alert("ON Button Works");
+  };
+
+  document.getElementById("offBtn").onclick = function () {
     alert("OFF Button Works");
+  };
+
 };
-  </script>
+</script>
+
+<script type="module" src="js/maintenance.js"></script>
+
 </body>
-</html>
